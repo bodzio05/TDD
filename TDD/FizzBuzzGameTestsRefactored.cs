@@ -26,5 +26,21 @@ namespace TDD
             //assert
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void Should_invalid_argument_exception_when_input_is_lower_than_1()
+        {
+            //arrange
+            var game = new FizzBuzzGame();
+
+            //act and assert
+            Assert.Throws<InvalidArgumentException>(() => game.Play(0));
+        }
+
+
+    }
+
+    internal class InvalidArgumentException : Exception
+    {
     }
 }
